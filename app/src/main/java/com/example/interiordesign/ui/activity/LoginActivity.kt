@@ -27,8 +27,8 @@ class LoginActivity : AppCompatActivity() {
 
         binding.loginButton.setOnClickListener {
             //show
-            var email :String = binding.registerEmail.text.toString()
-            var password :String = binding.registerPassword.text.toString()
+            var email :String = binding.loginEmail.text.toString()
+            var password :String = binding.loginPassword.text.toString()
 
             userViewModel.login(email,password){
                     success,message->
@@ -66,6 +66,7 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
 
         }
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())

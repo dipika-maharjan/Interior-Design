@@ -11,8 +11,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.example.interiordesign.R
 import com.example.interiordesign.databinding.ActivityNavigationBinding
-import com.example.interiordesign.ui.fragment.AboutFragment
-import com.example.interiordesign.ui.fragment.AccountFragment
+import com.example.interiordesign.ui.fragment.BookFragment
 import com.example.interiordesign.ui.fragment.ExploreFragment
 import com.example.interiordesign.ui.fragment.HomeFragment
 import com.example.interiordesign.ui.fragment.LogoutFragment
@@ -29,8 +28,7 @@ class NavigationActivity : AppCompatActivity() {
             when(menu.itemId){
                 R.id.navHome -> replaceFragment(HomeFragment())
                 R.id.navExplore -> replaceFragment(ExploreFragment())
-                R.id.navAbout -> replaceFragment(AboutFragment())
-                R.id.navAccount -> replaceFragment(AccountFragment())
+                R.id.navBook -> replaceFragment(BookFragment())
                 R.id.navLogout -> replaceFragment(LogoutFragment())
                 else ->{
                     val intent = Intent(this, OrderActivity::class.java)

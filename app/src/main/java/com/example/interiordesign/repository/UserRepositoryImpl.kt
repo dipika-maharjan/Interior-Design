@@ -29,7 +29,7 @@ class UserRepositoryImpl : UserRepository {
     ) {
         auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener {
             if(it.isSuccessful){
-                callback(true, "Registration sucess", auth.currentUser?.uid.toString())
+                callback(true, "Registration success", auth.currentUser?.uid.toString())
             }else{
                 callback(false, it.exception?.message.toString(), " ")
             }

@@ -31,15 +31,14 @@ class RegistrationActivity : AppCompatActivity() {
 
         binding.registerButton.setOnClickListener {
             loadingUtils.show()
-            val fullname = binding.fullname.text.toString()
+            val fullname = binding.registerFullname.text.toString()
             val email = binding.registerEmail.text.toString()
             val password = binding.registerPassword.text.toString()
-            val confirmpassword = binding.confirmPassword.text.toString()
 
             userViewModel.signup(email, password) { success, message, userId ->
                 if (success) {
                     var userModel =
-                        UserModel(userId.toString(), fullname, email, password, confirmpassword)
+                        UserModel(userId.toString(), fullname, email, password)
                     userViewModel.addUserToDatabase(userId, userModel) { success, message ->
                         if (success) {
                             Toast.makeText(this@RegistrationActivity, message, Toast.LENGTH_LONG)
@@ -53,7 +52,7 @@ class RegistrationActivity : AppCompatActivity() {
                 }
             }
 
-            binding.btnSignup.setOnClickListener {
+            binding.btnLogin.setOnClickListener {
                 val intent = Intent(this@RegistrationActivity,
                     LoginActivity::class.java)
                 startActivity(intent)
